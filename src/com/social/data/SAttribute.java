@@ -1,5 +1,5 @@
 package com.social.data;
 
-public class Attribute {
+public class SAttribute {
 
 }
