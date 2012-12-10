@@ -1,13 +1,11 @@
 package com.social.query;
 
 public class QueryParser {
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	
+	public QueryParser (String query) {
+		
 	}
+	
+	
 
 }

@@ -1,0 +1,13 @@
+package com.social.data;
+
+public class Node {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
