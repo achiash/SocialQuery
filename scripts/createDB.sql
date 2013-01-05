@@ -1,0 +1,13 @@
+drop database if exists social;
+create database social;
+use social;
+create table Node (nodeId bigint not null auto_increment, primary key(nodeId));
+create table Gr (groupId bigint not null auto_increment, primary key(groupId));
+create table Edge (edgeId bigint not null auto_increment, fromGroup bigint not null, toGroup bigint not null, primary key(edgeId) , foreign key (fromGroup) references Gr(groupId), foreign key (toGroup) references Gr(groupId));
+create table Attribute (attId bigint not null auto_increment, name varchar(255) not null, value varchar(255) not null, primary key (attId));
+create table GroupHasNode (groupId bigint not null, nodeId bigint not null, primary key (groupId, nodeId), foreign key (groupId) references Gr(groupId), foreign key (nodeId) references Node(nodeId));
+create table NodeHasAtt (nodeId bigint not null, attId bigint not null, primary key (nodeId, attId), foreign key (nodeId) references Node(nodeId), foreign key (attId) references Attribute(attId));
+create table EdgeHasAtt (edgeId bigint not null, attId bigint not null, primary key (edgeId, attId), foreign key (edgeId) references Edge(edgeId), foreign key (attId) references Attribute(attId));
+create index GNIndex on GroupHasNode(groupId);
+create index NAIndex on NodeHasAtt(nodeId);
+create index EAIndex on EdgeHasAtt(edgeId);
